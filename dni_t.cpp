@@ -27,32 +27,32 @@ void dni_t::set_letra(char n) {
 
 bool dni_t::operator==(const dni_t& n) {
     cont++;
-    return(dni == n.get_dni());
+    return(dni + letra == n.get_dni() + n.get_letra());
 }
 
 bool dni_t::operator!=(const dni_t& n) {
     cont++;
-    return(dni != n.get_dni());
+    return(dni + letra != n.get_dni() + n.get_letra());
 }
 
 bool dni_t::operator>(const dni_t& n) {
     cont++;
-    return(dni > n.get_dni());
+    return(dni + letra > n.get_dni() + n.get_letra());
 }
 
 bool dni_t::operator<(const dni_t& n) {
     cont++;
-    return(dni < n.get_dni());
+    return(dni + letra < n.get_dni() + n.get_letra());
 }
 
 bool dni_t::operator<=(const dni_t& n) {
     cont++;
-    return(dni <= n.get_dni());
+    return(dni + letra <= n.get_dni() + n.get_letra());
 }
 
 bool dni_t::operator>=(const dni_t& n) {
     cont++;
-    return(dni >= n.get_dni());
+    return(dni + letra >= n.get_dni() + n.get_letra());
 }
 
 int dni_t::get_cont() {
@@ -60,6 +60,6 @@ int dni_t::get_cont() {
 }
 
 ostream& operator<<(ostream& os, dni_t dni_) {
-    os << dni_.get_dni();
+    os << dni_.get_dni() << dni_.get_letra();
     return os;
 }

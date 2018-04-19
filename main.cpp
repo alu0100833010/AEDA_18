@@ -9,7 +9,7 @@ int main(void) {
    
     cout << endl;
     cout << "___|PRÁCTICA 5: ALGORITMOS Y ESTRUCTURAS DE DATOS AVANZADOS|___" << endl;
-    cout << "___|	  Implementación de métodos de ordenación	   |___" << endl;
+    cout << "___|	   Implementación de métodos de ordenación	   |___" << endl;
 	
 	int sz;
     cout << "Introduzca el tamaño de la secuencia: ";
@@ -28,17 +28,20 @@ int main(void) {
 	int semilla = time(NULL);
 	cout << "BANCO: [";
 	for(int i = 0; i < sz; i++){  //Creacion de DNI aleatorios
-		banco[i] = rand() % 50000000 + 30000000;
+		//banco[i] = rand() % 50000000 + 30000000;
+		banco[0] = 11111111;
+		banco[1] = 11111111;
+		banco[2] = 11111111;
+		banco[3] = 11111111;
+		banco[4] = 11111111;
 		dni = rand() % 23 + 1;
-		for (int j = 0; j < 1; j++) {
-			letra = "TRWAGMYFPDXBNJZSQVHLCKE"[dni % 23];
-			//cout << "LETRA: " << letra << endl;
-		}
+		letra = "TRWAGMYFPDXBNJZSQVHLCKE"[dni % 23];
 		if (i!= sz - 1)
 			cout <<  banco[i] << letra << ", ";
 		else
 			cout << banco[i]  << letra << "";
 		dni_[i].set_dni(banco[i]);
+		dni_[i].set_letra(letra);
 		srand(semilla--);
 	}
 	cout << "]" << endl;
